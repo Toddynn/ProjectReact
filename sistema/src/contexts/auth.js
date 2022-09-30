@@ -38,7 +38,7 @@ function AuthProvider({children}){
                 uid: uid,
                 nome: userProfile.data().nome,
                 email: value.user.email,
-                avatar_url: userProfile.data().avatar_url
+                avatarUrl: userProfile.data().avatarUrl
             };
 
             setUser(data);
@@ -63,14 +63,14 @@ function AuthProvider({children}){
             await firebase.firestore().collection('users')
             .doc(uid).set({
                     nome: nome,
-                    avatar_url: null
+                    avatarUrl: null
             })
             .then( () => {
                 let data = {
                     uid: uid,
                     nome: nome,
                     email: value.user.email,
-                    avatar_url: null
+                    avatarUrl: null
                 };
 
                 setUser(data);
@@ -104,7 +104,9 @@ function AuthProvider({children}){
             signUp,
             signOut,
             signIn,
-            loadingAuth
+            loadingAuth,
+            setUser,
+            storageUser
         }}>
             {children}
         </AuthContext.Provider>

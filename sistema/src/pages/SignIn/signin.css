@@ -1,3 +1,4 @@
+
 .container-center{
     height: 100%;
     display: flex;
@@ -8,11 +9,12 @@
 
 .login{
     background: #eaeaea;
-    width: 600px;
+    width: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-radius: 15px;
 }
 
 .login input{
@@ -28,13 +30,14 @@
 .login-area{
     display: flex;
     justify-content: center;
-    background-color: #181c2e;
 }
 
 .login-area h1{
     padding: 20px;
-    width: 170px;
-    height: 130px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+    
 }
 
 form{

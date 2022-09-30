@@ -1,16 +1,19 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
+import 'firebase/database';
+import 'firebase/functions';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCI6FTNIJpUIPCeX89WouSyw-BowmIbuWU",
-    authDomain: "curso-6403b.firebaseapp.com",    
-    projectId: "curso-6403b",   
-    storageBucket: "curso-6403b.appspot.com",  
-    messagingSenderId: "957981889739",   
-    appId: "1:957981889739:web:d96c08d4316acc4e40774e",  
-    measurementId: "G-JE6KYR3KF8" 
-}; 
+    apiKey: "AIzaSyCfjCguspVlGy7RBlahHpUi4SMOYkh9jSs",
+    authDomain: "sistema-7b159.firebaseapp.com",
+    projectId: "sistema-7b159",
+    storageBucket: "sistema-7b159.appspot.com",
+    messagingSenderId: "848155641494",
+    appId: "1:848155641494:web:db1c2185ac8b6d3c43e4b7",
+    measurementId: "G-DY7YVB42MJ"
+};
     
 if (!firebase.apps.length) { 
     firebase.initializeApp(firebaseConfig);

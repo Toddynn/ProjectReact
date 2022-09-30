@@ -29,6 +29,7 @@
     position: absolute;
     opacity: 0.7;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .label-avatar span:hover{
@@ -40,6 +41,7 @@
     margin-bottom: 1em;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .form-profile label{

@@ -13,7 +13,8 @@ export default function Header(){
     return(
         <div className='sidebar'>
             <div>
-                <img src={user.avatar_url === null ? Avatar : user.avatar_url} alt="foto avatar"></img>
+                <img src={user.avatarUrl === null ? Avatar : user.avatarUrl} alt="foto avatar"></img>
+                <h1>{user.nome}</h1>
             </div>
 
             <Link to="/dashboard"> 
@@ -26,7 +27,7 @@ export default function Header(){
             </Link>
             <Link to="/profile"> 
                 <FiSettings color='white' size={24}></FiSettings>
-                Configurações 
+                Meu Perfil 
             </Link>
         </div>
     )

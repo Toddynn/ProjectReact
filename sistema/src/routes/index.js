@@ -16,6 +16,7 @@ export default function Routes(){
             <Route exact path="/profile" component={Profile} isPrivate></Route>
             <Route exact path="/customers" component={Customers} isPrivate></Route>
             <Route exact path="/new" component={New} isPrivate></Route>
+            <Route exact path="/new/:id" component={New} isPrivate></Route>
         </Switch>
     )
 }

@@ -2,7 +2,7 @@ import './customers.css';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
 import { FiUser } from 'react-icons/fi';
-import { useState } from 'react';
+import { useState} from 'react';
 import firebase from '../../services/fireBaseConnection';
 import { toast } from 'react-toastify';
 
@@ -10,6 +10,29 @@ export default function Customers(){
     const [nomeCliente, setNomeCliente] = useState('');
     const [cpf, setCPF] = useState('');
     const [endereco, setEndereco] = useState('');
+    const [pessoas, setPessoas] = useState('');
+
+    async function handleListUsers(e){
+        e.preventDefault();
+        await firebase.firestore().collection('customers').get()
+        .then((snapshot) => {
+            let lista = [];
+            snapshot.forEach((doc) => {
+                lista.push({
+                    id: doc.id,
+                    nomeCliente: doc.data().nomeCliente,
+                    endereco: doc.data().endereco,
+                    cpf: doc.data().cpf
+                })
+            })
+            setPessoas(lista);
+            console.log(pessoas)
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+
+    };
 
     async function handleAdd(event){
         event.preventDefault();
@@ -53,7 +76,8 @@ export default function Customers(){
                         <label>CPF cliente</label>
                         <input type="text" placeholder="CPF do cliente" value={cpf} onChange={(e) => setCPF(e.target.value)}></input>
 
-                        <button type='submit'>Cadastrar</button>
+                        <button type='submit'>Cadastrar</button><br></br>
+                        <button onClick={handleListUsers}>Ver Clientes</button>
                     </form>
                 </div>
             </div>

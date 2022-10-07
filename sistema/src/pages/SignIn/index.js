@@ -22,7 +22,7 @@ function SignIn(){
         <div className='container-center'>
             <div className='login'>
                 <div className='login-area'>
-                    <h1>Pormade</h1>
+                    <img src='../assets/PETIM.png'></img>
                 </div>
 
                 <form onSubmit={handleSubmit}>

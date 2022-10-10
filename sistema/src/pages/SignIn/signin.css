@@ -5,7 +5,6 @@ Color Pallete{
     background-color: #509D45;
     background-color: #43AB74;
     background-color: #47B55B;
-    background-color: #55759E;
     background-color: #D4E8D1;
     /*bubbles*/
     background-color: #1D782C;
@@ -26,6 +25,7 @@ Color Pallete{
 }
 
 .login{
+    z-index: 1001 !important;
     color: white;
     width: 30%;
     height: 100%;
@@ -34,9 +34,8 @@ Color Pallete{
     justify-content: center;
     flex-direction: column;
     border-radius: 20px;
-    margin-bottom: 10em;
-    position: relative;
-    bottom: 3em;
+    position: absolute;
+    margin-bottom: 15em;
 }
 /* 
 .login .nav{
@@ -68,34 +67,20 @@ Color Pallete{
     right: 1.9em;
 }
  */
+.login-logo img{
+    width: 100%;
+    padding: 25px;
+    padding-bottom: 0%;
+}
+
 .login input{
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     height: 50px;
     border: 0;
     border-radius: 15px;
     padding: 10px;
     font-size: 20px;
     background-color: white;
-}
-
-.login-area{
-    z-index: 1001 !important;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.login-area img{
-    width: 100%;
-    padding: 25px;
-}
-
-.login-area h1{
-    padding: 20px;
-    width: 100%;
-    margin: 20px;
-    text-align: center;
 }
 
 form{
@@ -112,18 +97,91 @@ form h1{
     color: white;
 }
 
-input[type="text"], textarea {
+form .input{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+form .input a{
+    z-index: 1001 !important;
+    border: 0;
+    background-color: #222;
+    width: 0;
+}
+form .input .icon{
+    position: relative;
+    right: 2em;
+    font-size: 25px;
+    top: 5px;
+    color: white;
+    cursor: pointer;
+}
+form .input .icon :nth-child(1):hover{
+    color: #3cb62c;
+}
+
+form .email-label{
+    padding: 10px;
+    font-size: 25px;
+    transition: color 0.4s linear;
+}
+
+form .inputEmail {
+    box-shadow: 0px 0px 25px 1px transparent;
+    transition:  box-shadow 0.4s linear, border-color 0.4s linear;
+    outline: none;
+    padding: 15px;
     color: white;
     border: 2px solid #3cb62c;
     background-color : #222;
+    width: 100%;
 }
-input[type="password"], textarea {
+
+form .inputEmail:focus {
+    box-shadow: 0px 0px 25px 1px #3cb62c;
+    color: #3cb62c;
+}
+
+form .password-label {
+    padding: 10px;
+    font-size: 25px;
+    transition: color 0.4s linear;
+}
+
+form .inputPassword {
+    box-shadow: 0px 0px 25px 1px transparent;
+    transition:  box-shadow 0.4s linear, border-color 0.4s linear;
+    outline: none;
+    padding: 15px;
     color: white;
     border: 2px solid #3cb62c;
-    background-color : #222;   
+    background-color : #222;
+    width: 100%;
+}
+form .inputPassword::placeholder{
+    position: relative;
+    top: 3px;
+}
+
+form .inputPassword:focus {
+    box-shadow: 0px 0px 25px 1px #3cb62c;
+    color: #3cb62c;
+}
+
+form .viewPassword-Container{
+    position: relative;
+    align-self: end;
+    bottom: 5em;
+}
+
+form .viewPassword-Container .viewPassword{
+    border: 0;
+    color: white;
+    background-color: transparent;
 }
 
 form button{
+    margin-top: 0.5em;
     justify-content: center;
     text-align: center;
     height: 50px;
@@ -131,7 +189,7 @@ form button{
     border: 0;
     border-radius: 15px;
     background-color: #3cb62c;
-    color: white;
+    color: black;
     font-size: 25px;
     transition: 0.2s ease-in-out;
 }
@@ -139,93 +197,14 @@ form button{
 form button:hover{
     transform: scale(102%);
     background-color: #3cb62c;
+    box-shadow: 0px 0px 25px 1px #3cb62c;
 }
 
-.login a{
-    text-decoration: underline;
-    z-index: 1001 !important;
-    margin: 1.5em 0;
-    color: white;
-    cursor: pointer;
-}
-
-.container-icons{
-    height: 1em;
-    top: 8vh;
-    width: 100vw;
-    bottom: 0;
+.container-waves .waves {
     position: relative;
-    text-align: center;
-}
-
-.row-icons{
-    position: absolute;
     min-width: 100vw;
-}
-
-.icon{
-    width: 7em;
-    position: relative;
-}
-
-.row-icons > .icon:nth-child(1){
-    animation: up 10s infinite forwards;
-}
-.row-icons > .icon:nth-child(2){
-    animation: up2 10s infinite backwards;
-}
-.row-icons > .icon:nth-child(3){
-    animation: up 10s infinite forwards;
-}
-.row-icons > .icon:nth-child(4){
-    animation: up2 10s infinite backwards;
-}  
-.row-icons > .icon:nth-child(5){
-    animation: up 10s infinite forwards;
-}
-.row-icons > .icon:nth-child(6){
-    animation: up2 10s infinite backwards;
-}
-.row-icons > .icon:nth-child(7){
-    animation: up 10s infinite forwards;
-}
-.row-icons > .icon:nth-child(8){
-    animation: up2 10s infinite backwards;
-}    
-
-@keyframes up {
-    0%{
-        transform: translateY(0px);
-    }
-    
-    50%{
-        transform: translateY(-25px);
-    }
-    
-    100%{
-        transform: translateY(0px);
-    }
-}
-
-@keyframes up2 {
-    0%{
-        transform: translateY(0px);
-    }
-    
-    50%{
-        transform: translateY(25px);
-    }
-    
-    100%{
-        transform: translateY(0px);
-    }
-}
-
-/* .container-waves .waves {
-    position:absolute;
-    min-width:100vw;
+    top: 30.8vh;
     bottom: 0%;
-    top: 75.05vh;
     }
     
     .parallax > use {
@@ -265,4 +244,4 @@ form button:hover{
     .waves {
         width: 100vw;
     }
-} */
+}

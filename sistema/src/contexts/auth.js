@@ -48,7 +48,7 @@ function AuthProvider({children}){
         })
         .catch((err) => {
             console.log(err);
-            toast.error('Ops, algo deu errado');
+            toast.error('Usuário ou Senha inválidos!');
             setLoadingAuth(false);
         })
     }

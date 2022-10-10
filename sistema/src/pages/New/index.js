@@ -177,8 +177,8 @@ export default function New(){
                                 </label>
                                 
                                 <label>
-                                    <input type="radio" name="radio" value="Progresso" onChange={handleOptionChange} checked={ status === 'Progresso'}></input>
-                                    <span>Progresso</span>
+                                    <input type="radio" name="radio" value="Andamento" onChange={handleOptionChange} checked={ status === 'Andamento'}></input>
+                                    <span>Andamento</span>
                                 </label>
                                 <label>
                                     <input type="radio" name="radio" value="Atendido" onChange={handleOptionChange} checked={ status === 'Atendido'}></input>

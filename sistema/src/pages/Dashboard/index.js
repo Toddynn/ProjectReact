@@ -8,7 +8,7 @@ import Title from "../../components/Title";
 import firebase from "../../services/fireBaseConnection";
 import './dashboard.css';
 
-const listRef = firebase.firestore().collection('chamados').orderBy('status', "desc");
+const listRef = firebase.firestore().collection('chamados').orderBy('status', "asc");
 
 export default function Dashboard(){
     const [chamados, setChamados] = useState([]);

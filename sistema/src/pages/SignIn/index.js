@@ -64,7 +64,7 @@ function SignIn(){
                         <span>Senha</span>
                     </label>
                     <div className='input'>
-                        <input className="inputPassword" id='password' type="password" name="passwordarea" placeholder="***************************" maxlength="25" size="25" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                        <input className="inputPassword" id='password' type="password" name="passwordarea" placeholder="***************************" maxLength="25" size="25" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                         <a className='icon' onClick={alterVisibility}><AiOutlineEyeInvisible ></AiOutlineEyeInvisible></a>
                     </div>
                     <button type='submit'>{loadingAuth ? 'Carregando...' : 'Acessar'}</button>

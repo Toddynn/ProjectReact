@@ -6,198 +6,6 @@ Color Pallete{
     background-color: #43AB74;
     background-color: #47B55B;
     background-color: #D4E8D1;
-    /*bubbles*/
-    background-color: #1D782C;
-    background-color: #37df5b;
-    background-color: #4af06e;
-    background-color: #70DE62;
-    background-color: #7DF76D;
-    background-color: #9fd69d;
-    background-color: #D5E4CF;
-}
-
-.container-center{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
-
-.login{
-    z-index: 1001 !important;
-    color: white;
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 20px;
-    position: absolute;
-    margin-bottom: 15em;
-}
-/* 
-.login .nav{
-    padding: 15px;
-    margin-right: 15em;
-    height: 10em;
-    width: 75vw;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    color: white;
-    bottom: 39.5em;
-}
-
-.login .nav h1{
-    font-size: 45px;
-}
-.login .nav h3{
-    font-size: 30px;
-    font-weight: 600;
-    position: relative;
-    top: 1.5em;
-    right: 4.5em;
-}
-
-.login .nav img{
-    position: relative;
-    bottom: 0.5em;
-    right: 1.9em;
-}
- */
-.login-logo img{
-    width: 100%;
-    padding: 5px;
-    padding-bottom: 0%;
-}
-
-.login input{
-    margin-bottom: 1em;
-    height: 50px;
-    border: 0;
-    border-radius: 15px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: white;
-}
-
-form{
-    z-index: 1001 !important;
-    margin-top: 1em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-form h1{
-    text-align: center;
-    margin-bottom: 0.5em;
-    color: white;
-}
-
-form .input{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-}
-form .input a{
-    z-index: 1001 !important;
-    border: 0;
-    background-color: #222;
-    width: 0;
-}
-form .input .icon{
-    position: relative;
-    right: 2em;
-    font-size: 25px;
-    top: 5px;
-    color: white;
-    cursor: pointer;
-}
-form .input .icon :nth-child(1):hover{
-    color: #3cb62c;
-}
-
-form .email-label{
-    padding: 10px;
-    font-size: 20px;
-    transition: color 0.4s linear;
-}
-
-form .inputEmail {
-    box-shadow: 0px 0px 25px 1px transparent;
-    transition:  box-shadow 0.4s linear, border-color 0.4s linear;
-    outline: none;
-    padding: 15px;
-    color: white;
-    border: 2px solid #3cb62c;
-    background-color : #222;
-    width: 100%;
-}
-
-form .inputEmail:focus {
-    box-shadow: 0px 0px 25px 1px #3cb62c;
-    color: #3cb62c;
-}
-
-form .password-label {
-    padding: 10px;
-    font-size: 20px;
-    transition: color 0.4s linear;
-}
-
-form .inputPassword {
-    box-shadow: 0px 0px 25px 1px transparent;
-    transition:  box-shadow 0.4s linear, border-color 0.4s linear;
-    outline: none;
-    padding: 15px;
-    color: white;
-    border: 2px solid #3cb62c;
-    background-color : #222;
-    width: 100%;
-}
-form .inputPassword::placeholder{
-    position: relative;
-    top: 3px;
-}
-
-form .inputPassword:focus {
-    box-shadow: 0px 0px 25px 1px #3cb62c;
-    color: #3cb62c;
-}
-
-form .viewPassword-Container{
-    position: relative;
-    align-self: end;
-    bottom: 5em;
-}
-
-form .viewPassword-Container .viewPassword{
-    border: 0;
-    color: white;
-    background-color: transparent;
-}
-
-form button{
-    margin-top: 0.5em;
-    justify-content: center;
-    text-align: center;
-    height: 50px;
-    width: 100%;
-    border: 0;
-    border-radius: 15px;
-    background-color: #3cb62c;
-    color: white;
-    font-size: 30px;
-    transition: 0.2s ease-in-out;
-}
-
-form button:hover{
-    transform: scale(102%);
-    background-color: #3cb62c;
-    box-shadow: 0px 0px 25px 1px #3cb62c;
 }
 
 .container-waves .waves {
@@ -238,43 +46,7 @@ form button:hover{
 }
 
 /*4k*/
-@media (max-width: 2560px) and (max-height: 1523px) {
-    .container-center{
-        height: 100vh;
-    }
-    .login{
-        padding-bottom: 10em;
-    }
-    .login-logo{
-        width: 100%;
-    }
-    .login-logo img{
-        padding: 0;
-        width: 100%;
-    }
-    .login label{
-        font-size: 35px;
-    }
-    .login input{
-        height: 75px;
-    }
-    .login input::placeholder{
-        font-size: 25px;
-        padding: 15px;
-    }
-    form h1{
-        font-size: 70px;
-    }
-    form button{
-        height: 3em;
-    }
-    .container-waves .waves{
-        top: 34.4vh;
-    }
-}
-
-/*monitor principal*/
-@media (max-width: 1920px) and (max-height: 1080px) {
+@media (max-width: 2560px) and (max-height: 1396px) {
     .container-center{
         height: 100%;
         display: flex;
@@ -294,20 +66,19 @@ form button:hover{
         flex-direction: column;
         border-radius: 20px;
         position: absolute;
-        margin-bottom: 2em;
+        margin-bottom: 15em;
     }
     
     .login-logo img{
         width: 100%;
-        padding: 5px;
-        padding-bottom: 0%;
+        padding: 0%;
     }
     
     .login input{
         margin-bottom: 1em;
-        height: 50px;
+        height: 3em;
         border: 0;
-        border-radius: 15px;
+        border-radius: 8px;
         padding: 10px;
         font-size: 20px;
         background-color: white;
@@ -322,6 +93,7 @@ form button:hover{
     }
     
     form h1{
+        font-size: 85px;
         text-align: center;
         margin-bottom: 0.5em;
         color: white;
@@ -352,7 +124,7 @@ form button:hover{
     
     form .email-label{
         padding: 10px;
-        font-size: 20px;
+        font-size: 35px;
         transition: color 0.4s linear;
     }
     
@@ -374,7 +146,7 @@ form button:hover{
     
     form .password-label {
         padding: 10px;
-        font-size: 20px;
+        font-size: 35px;
         transition: color 0.4s linear;
     }
     
@@ -388,9 +160,13 @@ form button:hover{
         background-color : #222;
         width: 100%;
     }
+    form .inputEmail::placeholder{
+        font-size: 25px;
+    }
     form .inputPassword::placeholder{
+        font-size: 25px;
         position: relative;
-        top: 3px;
+        top: 5px;
     }
     
     form .inputPassword:focus {
@@ -414,10 +190,10 @@ form button:hover{
         margin-top: 0.5em;
         justify-content: center;
         text-align: center;
-        height: 50px;
+        height: 3em;
         width: 100%;
         border: 0;
-        border-radius: 15px;
+        border-radius: 8px;
         background-color: #3cb62c;
         color: white;
         font-size: 30px;
@@ -433,9 +209,43 @@ form button:hover{
     .container-waves .waves {
         position: relative;
         min-width: 100vw;
-        top: 30.8vh;
+        top: 33vh;
         bottom: 0%;
-        }
+    }
+}
+
+/*monitor principal*/
+@media (max-width: 1920px) and (max-height: 1080px) {
+    #root{
+        background-color: black;
+    }
+    .container-center{
+        height: 500px;
+        width: 100%;
+    }
+    .login {
+        z-index: 1001 !important;
+        color: white;
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 25em;
+    }
+    form h1{
+        font-size: 30px;
+    }
+    form .email-label, form .password-label{
+        font-size: 20px;
+    } 
+    form button{
+        height: 2em;
+    }
+    .container-waves .waves{
+        top: 53.8vh;
+    }
 }
 
 /*laptop L*/
@@ -444,19 +254,30 @@ form button:hover{
         height: 100vh;
     }
     .login{
-        padding-bottom: 10em;
+        width: 30%;
+        margin: 0%;
+        margin-bottom: 10em;
     }
-    form .inputEmail::placeholder, form .inputPassword::placeholder{
+    form .email-label, form .password-label{
+        font-size: 20px;
+    }
+    form .inputEmail::placeholder{
         font-size: 20px;
         padding: 5px;
+    }
+    form .inputPassword::placeholder{
         position: relative;
+        top: 0px;
     }
     form h1{
         font-size: 45px;
     }
+    form button{
+        height: 2em;
+    }
     .container-waves .waves{
         min-width: 100vw;
-        top: 35.8vh;
+        top: 34.2vh;
     }
 }
 
@@ -479,6 +300,12 @@ form button:hover{
 @media (max-width: 1024px) and (max-height: 838px) {
     .login{
         width: 40%;
+    }
+    .login input{
+        height: 2.5em;
+    }
+    form button{
+        height: 2em;
     }
     form .email-label, form .password-label{
         font-size: 20px;
@@ -537,7 +364,7 @@ form button:hover{
 /*ipad Air*/
 @media (max-width: 820px) and (max-height: 1180px) {
     .login{
-        margin-bottom: 0;
+        margin-bottom: 5em;
         width: 75%;
     }
     .container-waves .waves{
@@ -558,7 +385,7 @@ form button:hover{
         height: 3em;
     }
     .container-waves .waves{
-        top: 43.2vh;
+        top: 68.8vh;
     }
 }
 
@@ -698,7 +525,12 @@ form button:hover{
     form .email-label, form .password-label{
         font-size: 15px;
     }
-    form .inputEmail::placeholder, form .inputPassword::placeholder{
+    form .inputEmail::placeholder{
+        position: relative;
+        bottom: 3px;
+        font-size: 12px;
+    }
+    form .inputPassword::placeholder{
         font-size: 12px;
     }
 }

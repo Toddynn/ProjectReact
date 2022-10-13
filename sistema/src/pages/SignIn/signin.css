@@ -232,7 +232,7 @@ Color Pallete{
         align-items: center;
         flex-direction: column;
         position: absolute;
-        margin-top: 25em;
+        margin-top: 30em;
     }
     form h1{
         font-size: 30px;

@@ -29,9 +29,11 @@ function SignIn(){
         if(input.type === 'password'){
             input.removeAttribute("type", "password");
             input.setAttribute("type", "text");
+            input.placeholder = 'sua senha está visível';
         }else{
             input.removeAttribute("type", "text");
             input.setAttribute("type", "password");
+            input.placeholder = '***************************';
         }
     }
 

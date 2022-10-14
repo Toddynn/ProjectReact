@@ -81,25 +81,25 @@ export default function Customers(){
                         <button onClick={handleListUsers}>Ver Clientes</button>
                     </form>
                     <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Endereço</th>
-                                    <th scope="col">CPF</th>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Endereço</th>
+                                <th scope="col">CPF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {pessoas.map((lista, index) => {
+                            return(
+                                <tr key={index}>
+                                    <td data-label="Nome">{lista.nomeCliente}</td>
+                                    <td data-label="Endereço">{lista.endereco}</td>
+                                    <td data-label="CPF">{lista.cpf}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                            {pessoas.map((lista, index) => {
-                                return(
-                                    <tr key={index}>
-                                        <td data-label="Nome">{lista.nomeCliente}</td>
-                                        <td data-label="Endereço">{lista.endereco}</td>
-                                        <td data-label="CPF">{lista.cpf}</td>
-                                    </tr>
-                                )
-                            })}
-                            </tbody>
-                        </table>
+                            )
+                        })}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

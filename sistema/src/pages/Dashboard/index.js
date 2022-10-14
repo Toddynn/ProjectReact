@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { useEffect, useState } from "react";
-import { FiEdit, FiMessageSquare, FiPlus, FiSearch } from "react-icons/fi";
+import { FiEdit, FiMessageSquare, FiPlus, FiSearch} from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
@@ -19,7 +19,6 @@ export default function Dashboard(){
     const [showPostModal, setShowPostModal] = useState(false);
     const [detail, setDetail] = useState();
 
-    
     useEffect(() => {
         async function loadChamados(){
             await listRef.limit(5).get()
@@ -30,7 +29,7 @@ export default function Dashboard(){
                 console.log(err);
                 setLoadingMore(false);
             });
-    
+
             setLoading(false);
         }
 
@@ -143,8 +142,8 @@ export default function Dashboard(){
                                             </td>
                                             <td data-label="Cadastrado">{item.createdFormated}</td>
                                             <td data-label="#">
-                                                <button className="action" style={{backgroundColor: '#3583f6'}}>
-                                                    <FiSearch color="white" size={17} onClick={() => togglePostModal(item)}></FiSearch>
+                                                <button className="action" style={{backgroundColor: '#3583f6'}} onClick={() => togglePostModal(item)}>
+                                                    <FiSearch color="white" size={17}></FiSearch>
                                                 </button>
                                                 <Link to={`/new/${item.id}`} className="action" style={{backgroundColor: '#f6a935'}}>
                                                     <FiEdit color="white" size={17}></FiEdit>

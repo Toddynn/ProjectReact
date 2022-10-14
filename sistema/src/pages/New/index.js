@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { FiPlusCircle } from 'react-icons/fi';
+import { FiEdit } from 'react-icons/fi';
 import { useHistory, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Header from '../../components/Header';
@@ -93,6 +93,20 @@ export default function New(){
         setAssunto(e.target.value);
     }
 
+    async function handleDelete(event){
+        event.preventDefault();
+        if(idCustomer){
+            await firebase.firestore().collection('chamados').doc(id)
+            .delete()
+            .then(() => {
+                toast.warn("chamado excluido com sucesso!");
+                setCustomerSelected(0);
+                setComplemento('');
+                history.push('/dashboard');
+            })
+            .catch((err) => toast.error("erro ao excluir"));
+        }
+    }
     async function handleRegister(event){
         event.preventDefault();
 
@@ -142,10 +156,9 @@ export default function New(){
     return(
         <div>
             <Header></Header>
-
             <div className='content'>
-                <Title name="Novo Chamado">
-                    <FiPlusCircle size={25}></FiPlusCircle>
+                <Title name="Editando chamado">
+                    <FiEdit size={25}></FiEdit>
                 </Title>
 
                 <div className='container'>
@@ -187,7 +200,8 @@ export default function New(){
                             </div>
                         <label>Complemento</label>
                         <textarea type="text" placeholder='Descreva seu problema (opcional)' onChange={ (e) => setComplemento(e.target.value)}></textarea>
-                        <button type='submit'>Registrar</button>
+                        <button type='submit'>Confirmar</button>
+                        <button type='button' onClick={handleDelete} className='excluir'>Excluir</button>
                     </form>
                 </div>
             </div>

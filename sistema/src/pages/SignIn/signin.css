@@ -104,6 +104,7 @@ Color Pallete{
         flex-direction: row;
         align-items: baseline;
     }
+
     form .input a{
         z-index: 1001 !important;
         border: 0;

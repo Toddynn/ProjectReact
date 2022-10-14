@@ -25,6 +25,7 @@ function SignIn(){
         event.preventDefault();
 
         var input = document.getElementById("password");
+        var warning = document.getElementById("warning");
 
         if(input.type === 'password'){
             input.removeAttribute("type", "password");

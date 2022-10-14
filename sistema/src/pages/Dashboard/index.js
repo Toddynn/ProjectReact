@@ -75,7 +75,7 @@ export default function Dashboard(){
             updateState(snapshot);
         })
     }
-    
+
     function togglePostModal(item){
         setShowPostModal(!showPostModal);
         setDetail(item);

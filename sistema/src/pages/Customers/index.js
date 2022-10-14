@@ -10,11 +10,13 @@ export default function Customers(){
     const [nomeCliente, setNomeCliente] = useState('');
     const [cpf, setCPF] = useState('');
     const [endereco, setEndereco] = useState('');
-    const [pessoas, setPessoas] = useState('');
+    const [pessoas, setPessoas] = useState([]);
 
     async function handleListUsers(e){
         e.preventDefault();
-        await firebase.firestore().collection('customers').get()
+
+        await firebase.firestore().collection('customers')
+        .get()
         .then((snapshot) => {
             let lista = [];
             snapshot.forEach((doc) => {
@@ -26,12 +28,11 @@ export default function Customers(){
                 })
             })
             setPessoas(lista);
-            console.log(pessoas)
+            console.log(pessoas);
         })
         .catch((err)=>{
             console.log(err);
         })
-
     };
 
     async function handleAdd(event){
@@ -76,9 +77,29 @@ export default function Customers(){
                         <label>CPF cliente</label>
                         <input type="text" placeholder="CPF do cliente" value={cpf} onChange={(e) => setCPF(e.target.value)}></input>
 
-                        <button type='submit'>Cadastrar</button><br></br>
+                        <button type='submit'>Cadastrar</button>
                         <button onClick={handleListUsers}>Ver Clientes</button>
                     </form>
+                    <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Endereço</th>
+                                    <th scope="col">CPF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {pessoas.map((lista, index) => {
+                                return(
+                                    <tr key={index}>
+                                        <td data-label="Nome">{lista.nomeCliente}</td>
+                                        <td data-label="Endereço">{lista.endereco}</td>
+                                        <td data-label="CPF">{lista.cpf}</td>
+                                    </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>

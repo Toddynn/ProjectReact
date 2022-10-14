@@ -1,7 +1,7 @@
 import './customers.css';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
-import { FiUser } from 'react-icons/fi';
+import { FiUser, FiX } from 'react-icons/fi';
 import { useState} from 'react';
 import firebase from '../../services/fireBaseConnection';
 import { toast } from 'react-toastify';
@@ -86,6 +86,7 @@ export default function Customers(){
                                 <th scope="col">Nome</th>
                                 <th scope="col">Endereço</th>
                                 <th scope="col">CPF</th>
+                                <th scope='col'>id</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -95,6 +96,7 @@ export default function Customers(){
                                     <td data-label="Nome">{lista.nomeCliente}</td>
                                     <td data-label="Endereço">{lista.endereco}</td>
                                     <td data-label="CPF">{lista.cpf}</td>
+                                    <td data-label="id">{lista.id}</td>
                                 </tr>
                             )
                         })}

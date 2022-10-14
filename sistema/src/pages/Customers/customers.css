@@ -1,0 +1,9 @@
+.action{
+    border: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-radius: 4px;
+    transition: ease-in-out 0.2s;
+}

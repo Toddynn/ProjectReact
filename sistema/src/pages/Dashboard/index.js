@@ -78,7 +78,6 @@ export default function Dashboard(){
     function togglePostModal(item){
         setShowPostModal(!showPostModal);
         setDetail(item);
-
     }
 
     if(loading){

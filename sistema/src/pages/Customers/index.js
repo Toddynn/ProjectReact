@@ -15,6 +15,12 @@ export default function Customers(){
     var title = document.getElementById('title');
     var close = document.getElementById('close');
 
+    function showTable(){
+        table.setAttribute("style", "visibility: visible");
+        title.setAttribute("style", "visibility: visible");
+        close.setAttribute("style", "visibility: visible");
+    }
+
     async function handleListUsers(e){
         e.preventDefault();
 
@@ -35,9 +41,7 @@ export default function Customers(){
         .catch((err)=>{
             console.log(err);
         })
-        table.setAttribute("style", "visibility: visible");
-        title.setAttribute("style", "visibility: visible");
-        close.setAttribute("style", "visibility: visible");
+        showTable();
     };
 
     async function handleAdd(event){

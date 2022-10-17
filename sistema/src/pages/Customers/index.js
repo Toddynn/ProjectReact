@@ -11,6 +11,7 @@ export default function Customers(){
     const [cpf, setCPF] = useState('');
     const [endereco, setEndereco] = useState('');
     const [pessoas, setPessoas] = useState([]);
+    var table = document.getElementById('table');
 
     async function handleListUsers(e){
         e.preventDefault();
@@ -33,6 +34,7 @@ export default function Customers(){
         .catch((err)=>{
             console.log(err);
         })
+        table.setAttribute("style", "display: visible");
     };
 
     async function handleAdd(event){
@@ -80,28 +82,32 @@ export default function Customers(){
                         <button type='submit'>Cadastrar</button>
                         <button onClick={handleListUsers}>Ver Clientes</button>
                     </form>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Endereço</th>
-                                <th scope="col">CPF</th>
-                                <th scope='col'>id</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {pessoas.map((lista, index) => {
-                            return(
-                                <tr key={index}>
-                                    <td data-label="Nome">{lista.nomeCliente}</td>
-                                    <td data-label="Endereço">{lista.endereco}</td>
-                                    <td data-label="CPF">{lista.cpf}</td>
-                                    <td data-label="id">{lista.id}</td>
+                    <div className='container-table'>
+                        <h1>Tabela de Clientes</h1>
+                        <table id="table" style={{display: 'none'}}>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Endereço</th>
+                                    <th scope="col">CPF</th>
+                                    <th scope='col' className='botao'>
+                                        <button className='fecha' onClick={()=>{table.setAttribute('style', 'display: none')}}><FiX></FiX></button>
+                                    </th>
                                 </tr>
-                            )
-                        })}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {pessoas.map((lista, index) => {
+                                return(
+                                    <tr key={index}>
+                                        <td data-label="Nome">{lista.nomeCliente}</td>
+                                        <td data-label="Endereço">{lista.endereco}</td>
+                                        <td data-label="CPF">{lista.cpf}</td>
+                                    </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
-import './customers.css';
+import { useState } from 'react';
+import { FiUser, FiX } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
-import { FiUser, FiX } from 'react-icons/fi';
-import { useState} from 'react';
 import firebase from '../../services/fireBaseConnection';
-import { toast } from 'react-toastify';
+import './customers.css';
 
 export default function Customers(){
     const [nomeCliente, setNomeCliente] = useState('');
@@ -12,6 +12,8 @@ export default function Customers(){
     const [endereco, setEndereco] = useState('');
     const [pessoas, setPessoas] = useState([]);
     var table = document.getElementById('table');
+    var title = document.getElementById('title');
+    var close = document.getElementById('close');
 
     async function handleListUsers(e){
         e.preventDefault();
@@ -29,12 +31,13 @@ export default function Customers(){
                 })
             })
             setPessoas(lista);
-            console.log(pessoas);
         })
         .catch((err)=>{
             console.log(err);
         })
-        table.setAttribute("style", "display: visible");
+        table.setAttribute("style", "visibility: visible");
+        title.setAttribute("style", "visibility: visible");
+        close.setAttribute("style", "visibility: visible");
     };
 
     async function handleAdd(event){
@@ -83,16 +86,22 @@ export default function Customers(){
                         <button onClick={handleListUsers}>Ver Clientes</button>
                     </form>
                     <div className='container-table'>
-                        <h1>Tabela de Clientes</h1>
+                        <div className='row-table'>
+                            <div className='col-table'>
+                                <h1 id='title'>Tabela de Clientes</h1>
+                            </div>
+                            <div className='col-table botao'>
+                                <button id="close" className='fecha' onClick={()=>{table.setAttribute('style', 'visibility: hidden');
+                                                                                    title.setAttribute('style', 'visibility: hidden');
+                                                                                    close.setAttribute('style', 'visibility: hidden');}}><FiX></FiX></button>
+                            </div>
+                        </div>
                         <table id="table" style={{display: 'none'}}>
                             <thead>
                                 <tr>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Endereço</th>
                                     <th scope="col">CPF</th>
-                                    <th scope='col' className='botao'>
-                                        <button className='fecha' onClick={()=>{table.setAttribute('style', 'display: none')}}><FiX></FiX></button>
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>

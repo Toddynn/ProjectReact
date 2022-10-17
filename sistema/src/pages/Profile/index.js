@@ -1,13 +1,13 @@
-import './profile.css';
+import { useContext, useState } from 'react';
+import { FiSettings, FiUpload } from 'react-icons/fi';
+import { toast } from 'react-toastify';
+import Avatar from '../../assets/avatar.png';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
-import { useState, useContext } from 'react';
 import { AuthContext } from '../../contexts/auth';
-import Avatar from '../../assets/avatar.png';
 import firebase from '../../services/fireBaseConnection';
+import './profile.css';
 
-import {FiSettings, FiUpload} from 'react-icons/fi';
-import { toast } from 'react-toastify';
 
 export default function Profile(){
     const { user, signOut, setUser, storageUser } = useContext(AuthContext);

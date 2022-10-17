@@ -1,11 +1,9 @@
+import { useContext, useState } from 'react';
+import { AiOutlineEyeInvisible } from 'react-icons/ai';
+import { TbMail } from 'react-icons/tb';
+import Logo from '../../assets/logoPetim_Branco 3.svg';
+import { AuthContext } from '../../contexts/auth';
 import './signin.css';
-import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import {AuthContext} from '../../contexts/auth'
-import Logo from '../../assets/logoPetim_Branco 3.svg'
-import Folinha from '../../assets/folinha.png';
-import {AiOutlineEyeInvisible} from 'react-icons/ai';
-import {TbMail} from 'react-icons/tb';
 
 function SignIn(){
     const [email, setEmail] = useState('');

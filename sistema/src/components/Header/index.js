@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import './header.css';
-import { AuthContext } from '../../contexts/auth';
-import Avatar from '../../assets/avatar.png';
-import { Link } from 'react-router-dom';
-
 //icons
-import {FiHome, FiUser, FiSettings} from 'react-icons/fi';
+import { FiHome, FiSettings, FiUser } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import Avatar from '../../assets/avatar.png';
+import { AuthContext } from '../../contexts/auth';
+import './header.css';
+
 
 export default function Header(){
     const {user} = useContext(AuthContext);

@@ -42,6 +42,8 @@ export default function Customers(){
             console.log(err);
         })
         showTable();
+
+        return handleListUsers();
     };
 
     async function handleAdd(event){
@@ -59,6 +61,7 @@ export default function Customers(){
                 setCPF("");
                 setEndereco("");
                 toast.info("Cliente cadastrado com sucesso!");
+                handleListUsers();
             })
             .catch((err) => {
                 console.log(err);

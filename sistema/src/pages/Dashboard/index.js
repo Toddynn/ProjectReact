@@ -127,7 +127,7 @@ export default function Dashboard(){
                                     <th scope="col">Assunto</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Cadastrado em</th>
-                                    <th scope="col">#</th>
+                                    <th scope="col">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -140,7 +140,7 @@ export default function Dashboard(){
                                                 <span className="Badge" style={{ backgroundColor: item.status === 'Aberto' ? '#5cb85c' : '#999' && item.status === 'Atendido' ? '#999' : '#f6a935'}}>{item.status}</span>
                                             </td>
                                             <td data-label="Cadastrado">{item.createdFormated}</td>
-                                            <td data-label="#">
+                                            <td data-label="Ações">
                                                 <button className="action" style={{backgroundColor: '#3583f6'}} onClick={() => togglePostModal(item)}>
                                                     <FiSearch color="white" size={17}></FiSearch>
                                                 </button>

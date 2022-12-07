@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import firebase from '../services/fireBaseConnection';
 
-export const AuthContext = createContext({});
+export const  AuthContext = createContext({});
 
 function AuthProvider({children}){
     const [user, setUser] = useState(null);
